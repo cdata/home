@@ -83,12 +83,12 @@ function vimSetup {
     ln -s ../Repositories/nerdtree/nerdtree_plugin
     
     cd plugin
-    ln -s ../Repositories/nerdtree/plugin/NERD_tree.vim
-    ln -s ../Repositories/vim-fugitive/plugin/fugitive.vim
+    ln -s ../../Repositories/nerdtree/plugin/NERD_tree.vim
+    ln -s ../../Repositories/vim-fugitive/plugin/fugitive.vim
 
     cd ../doc
-    ln -s ../Repositories/nerdtree/doc/NERD_tree.txt
-    ln -s ../Repositories/vim-fugitive/doc/fugitive.txt
+    ln -s ../../Repositories/nerdtree/doc/NERD_tree.txt
+    ln -s ../../Repositories/vim-fugitive/doc/fugitive.txt
 
     cd $workingDirectory
 }
