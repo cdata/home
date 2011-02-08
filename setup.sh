@@ -6,13 +6,13 @@ platform=`uname`
 workingDirectory=`pwd`
 
 nodeRepos=( \
-    'https://github.com/ry/node.git' \
-    'https://github.com/isaacs/npm.git' \
+    https://github.com/ry/node.git \
+    https://github.com/isaacs/npm.git \
 )
 
 vimRepos=( \
-    'https://github.com/scrooloose/nerdtree.git' \
-    'https://github.com/tpope/vim-fugitive.git' \
+    https://github.com/scrooloose/nerdtree.git \
+    https://github.com/tpope/vim-fugitive.git \
 )
 
 function initializePlatform {
@@ -94,27 +94,23 @@ function vimSetup {
 
 function cloneRepos {
     
-    cd ~/Repositories
-
-    for arg in $args; do
+    for arg in "${args[@]}"; do
         case "$arg" in
             vim)
-                echo "Performing vim setup..."
 
-                for repo in $vimRepos; do
-
-                    echo "Cloning $repo"
+                for repo in "${vimRepos[@]}"; do
+                    
+                    cd ~/Repositories
                     git clone $repo
                 done
 
                 vimSetup
                 ;;
             node)
-                echo "Performing node setup..."
 
-                for repo in $nodeRepos; do
-
-                    echo "Cloning $repo"
+                for repo in "${nodeRepos[@]}"; do
+                    
+                    cd ~/Repositories
                     git clone $repo
                 done
  
