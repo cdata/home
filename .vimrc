@@ -6,6 +6,9 @@
 " Turn on line numbering. Turn it off with "set nonu" 
 set nu 
 
+" Fix backspace when on the terminal...
+set backspace=2
+
 " Set syntax on
 set nocompatible
 syntax on
