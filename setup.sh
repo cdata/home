@@ -23,6 +23,7 @@ function initializePlatform {
         sudo ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"
         
         brew install git
+        brew install macvim
         
     else
         
@@ -30,7 +31,7 @@ function initializePlatform {
         sudo apt-get -yq update
         sudo apt-get -yq upgrade
         
-        sudo apt-get -yq install aptitude git build-essential
+        sudo apt-get -yq install aptitude git build-essential openssh-server vim
         
     fi
 }
@@ -49,38 +50,13 @@ function initializeHome {
     cd $workingDirectory
 }
 
-function cloneRepos {
-    
-    cd ~/Repositories
-
-    for arg in "$args"; do
-        case "$arg" in
-            vim)
-                for repo in $vimRepos; do
-                    git clone $repo
-                done
-
-                vimSetup
-                ;;
-            node)
-                for repo in $nodeRepos; do
-                    git clone $repo
-                done
- 
-                nodeSetup
-                ;;
-        esac
-    done
-
-    cd $workingDirectory
-}
 
 function nodeSetup {
     
     if [[ "$platform" == 'Darwin' ]]; then
         brew install openssl
     else
-        sudo apt-get install libssl-dev
+        sudo apt-get -yq install libssl-dev
     fi
 
     cd ~/Repositories/node
@@ -112,6 +88,40 @@ function vimSetup {
     cd ../doc
     ln -s ../Repositories/nerdtree/doc/NERD_tree.txt
     ln -s ../Repositories/vim-fugitive/doc/fugitive.txt
+
+    cd $workingDirectory
+}
+
+function cloneRepos {
+    
+    cd ~/Repositories
+
+    for arg in $args; do
+        case "$arg" in
+            vim)
+                echo "Performing vim setup..."
+
+                for repo in $vimRepos; do
+
+                    echo "Cloning $repo"
+                    git clone $repo
+                done
+
+                vimSetup
+                ;;
+            node)
+                echo "Performing node setup..."
+
+                for repo in $nodeRepos; do
+
+                    echo "Cloning $repo"
+                    git clone $repo
+                done
+ 
+                nodeSetup
+                ;;
+        esac
+    done
 
     cd $workingDirectory
 }
