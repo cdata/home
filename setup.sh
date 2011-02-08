@@ -40,7 +40,7 @@ function initializeHome {
     cd ~/
 
     git init
-    git remote add origin git@github.com:cdata/home.git
+    git remote add origin git://github.com/cdata/home.git
     git pull origin master
     
     mkdir ~/Repositories
@@ -51,7 +51,7 @@ function initializeHome {
 
 function cloneRepos {
     
-    for arg in $args; do
+    for arg in "$args"; do
         case "$arg" in
             vim)
                 for repo in $vimRepos; do
@@ -115,4 +115,5 @@ function selfDestruct {
 
 initializePlatform
 initializeHome
-
+cloneRepos
+selfDestruct
