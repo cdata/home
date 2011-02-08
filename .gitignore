@@ -1,0 +1,15 @@
+Documents/**/*
+Music/**/*
+Movies/**/*
+Library/**/*
+Desktop/**/*
+Applications/**/*
+Pictures/**/*
+Downloads/**/*
+Public/**/*
+Sites/**/*
+
+Repositories/**/*
+.local/**/*
+
+.DS_Store
