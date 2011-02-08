@@ -51,24 +51,28 @@ function initializeHome {
 
 function cloneRepos {
     
+    cd ~/Repositories
+
     for arg in "$args"; do
         case "$arg" in
             vim)
                 for repo in $vimRepos; do
-                    git clone $repo ~/Repositories/
+                    git clone $repo
                 done
 
                 vimSetup
                 ;;
             node)
                 for repo in $nodeRepos; do
-                    git clone $repo ~/Repositores/
+                    git clone $repo
                 done
  
                 nodeSetup
                 ;;
         esac
     done
+
+    cd $workingDirectory
 }
 
 function nodeSetup {
@@ -93,19 +97,23 @@ function nodeSetup {
 
 function vimSetup {
     
-    # General VIM folder structure
-    mkdir ~/.vim/doc
-    mkdir ~/.vim/plugin
-    mkdir ~/.vim/syntax
-    
-    # NERD tree
-    ln -s ../Repositories/nerdtree/nerdtree_plugin
-    ln -s ../Repositories/nerdtree/plugin/NERD_tree.vim ~/.vim/plugin/NERD_tree.vim
-    ln -s ../Repositories/nerdtree/doc/NERD_tree.txt ~/.vim/doc/NERD_tree.txt
+    cd ~/.vim
 
-    # Fugitive
-    ln -s ../Repositories/vim-fugitive/plugin/fugitive.vim ~/.vim/plugin/fugitive.vim
-    ln -s ../Repositories/vim-fugitive/doc/fugitive.txt ~/.vim/doc/fugitive.txt
+    mkdir doc
+    mkdir plugin
+    mkdir syntax
+    
+    ln -s ../Repositories/nerdtree/nerdtree_plugin
+    
+    cd plugin
+    ln -s ../Repositories/nerdtree/plugin/NERD_tree.vim
+    ln -s ../Repositories/vim-fugitive/plugin/fugitive.vim
+
+    cd ../doc
+    ln -s ../Repositories/nerdtree/doc/NERD_tree.txt
+    ln -s ../Repositories/vim-fugitive/doc/fugitive.txt
+
+    cd $workingDirectory
 }
 
 function selfDestruct {
