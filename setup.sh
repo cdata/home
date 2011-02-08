@@ -36,26 +36,32 @@ function initializePlatform {
 }
 
 function initializeHome {
-     
-    git clone git@github.com:cdata/home.git ~/
+    
+    cd ~/
 
+    git init
+    git remote add origin git@github.com:cdata/home.git
+    git pull origin master
+    
     mkdir ~/Repositories
     mkdir ~/.local
+
+    cd $workingDirectory
 }
 
 function cloneRepos {
     
-    for arg in $args
+    for arg in $args; do
         case "$arg" in
             vim)
-                for repo in $vimRepos
+                for repo in $vimRepos; do
                     git clone $repo ~/Repositories/
                 done
 
                 vimSetup
                 ;;
             node)
-                for repo in $nodeRepos
+                for repo in $nodeRepos; do
                     git clone $repo ~/Repositores/
                 done
  
