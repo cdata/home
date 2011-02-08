@@ -66,6 +66,7 @@ function nodeSetup {
     
     cd ~/Repositories/npm
     
+    node cli.js config set unsafe-perm true 
     make install
     
     cd $workingDirectory
