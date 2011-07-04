@@ -7,7 +7,6 @@ workingDirectory=`pwd`
 
 repositories=( \
     https://github.com/cdata/home.git \
-    https://github.com/revans/bash-it.git \
 )
 
 function initializePlatform {
@@ -26,7 +25,7 @@ function initializePlatform {
         sudo apt-get -yq update
         sudo apt-get -yq upgrade
         
-        sudo apt-get -yq install aptitude git build-essential openssh-server vim rubygems1.8
+        sudo apt-get -yq install aptitude git build-essential openssh-server vim rubygems1.8 screen
         
     fi
 }
@@ -64,7 +63,7 @@ function initializeDotFiles {
     ln -s ~/repositories/home/.bash_profile
     ln -s ~/repositories/home/.bashrc
     ln -s ~/repositories/home/.support
-    ln -s ~/repositories/bash-it .bash_it
+    ln -s ~/repositories/home/.support/bash-it ~/.bash_it
 
     if [[ ! -e .ssh ]]; then
         mkdir .ssh
