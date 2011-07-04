@@ -26,7 +26,7 @@ function initializePlatform {
         sudo apt-get -yq update
         sudo apt-get -yq upgrade
         
-        sudo apt-get -yq install aptitude git build-essential openssh-server vim
+        sudo apt-get -yq install aptitude git build-essential openssh-server vim rubygems1.8
         
     fi
 }
