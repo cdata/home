@@ -5,12 +5,11 @@ export NGX_REPOS=${HOME}/Documents/repositories
 export NGX_MODULES_LOCATION=${NGX_REPOS}/nginx-modules
 export NGX_INSTALL_PREFIX=${HOME}/.bin/nginx-ui
 
-alias cf='cd ~/Documents/Repositories/cf-www'
-alias rebash='source ~/.bash_profile'
-alias setbash='nano ~/.bash_profile'
-alias xcf='export SERVER_ROOT=/Users/chrisjoel/Documents/Repositories/cf-www'
-alias repos='cd ~/Documents/Repositories'
-alias cflogs='tail -f $CF_ROOT/logs/app.log'
+alias repos='cd ~/repositories'
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 ##
 # Your previous /Users/chrisjoel/.bash_profile file was backed up as /Users/chrisjoel/.bash_profile.macports-saved_2010-06-13_at_18:54:02
@@ -24,7 +23,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:~/.local/bin:$PATH
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # Add rvm gems and nginx to the path
-#export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
+export PATH=$PATH:~/.gem/ruby/1.8/bin
 
 # Path to the bash it configuration
 export BASH=$HOME/.bash_it
@@ -39,8 +38,8 @@ export BASH_THEME='modern'
 #export GIT_HOSTING='git@git.domain.com'
 
 # Set my editor and git editor
-#export EDITOR="/usr/bin/mate -w"
-#export GIT_EDITOR='/usr/bin/mate -w'
+export EDITOR="vim"
+export GIT_EDITOR='vim'
 
 # Set the path nginx
 #export NGINX_PATH='/opt/nginx'
