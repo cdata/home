@@ -58,6 +58,7 @@ function initializeDotFiles {
     ln -s ~/repositories/home/.gvimrc
     ln -s ~/repositories/home/.screenrc
     ln -s ~/repositories/home/.bash_profile
+    ln -s ~/repositories/home/.bashrc
     ln -s ~/repositories/home/.support
     ln -s ~/repositories/bash-it .bash_it
 
