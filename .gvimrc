@@ -1,3 +1,3 @@
 set fuopt=maxvert,maxhorz
 
-colorscheme wombat
+colorscheme railscasts

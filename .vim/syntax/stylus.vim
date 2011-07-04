@@ -1,0 +1,1 @@
+../../.support/vim-stylus/syntax/stylus.vim
