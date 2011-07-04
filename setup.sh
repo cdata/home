@@ -44,11 +44,11 @@ function initializeDotFiles {
     
     cd ~/
 
-    if [ -e .bashrc ]; then
+    if [[ -e .bashrc ]]; then
         mv .bashrc .bashrc.backup
     fi
 
-    if [ -e .bash_profile]; then
+    if [[ -e .bash_profile ]]; then
         mv .bash_profile .bash_profile.backup
     fi
 
@@ -59,7 +59,7 @@ function initializeDotFiles {
     ln -s ~/repositories/home/.bash_profile
     ln -s ~/repositories/home/.support
 
-    if [ ! -e .ssh ]; then
+    if [[ ! -e .ssh ]]; then
         mkdir .ssh
     fi
 
