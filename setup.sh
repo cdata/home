@@ -39,6 +39,10 @@ function initializeRepositories {
     for repository in "${repositories[@]}"; do
         git clone $repository
     done
+
+    cd home
+    git submodule init
+    git submodule update
 }
 
 function initializeDotFiles {
