@@ -46,8 +46,13 @@ function initializeDotFiles {
     
     cd ~/
 
-    mv .bashrc .bashrc.backup
-    mv .bash_profile .bash_profile.backup
+    if [ -e .bashrc ]; then
+        mv .bashrc .bashrc.backup
+    fi
+
+    if [ -e .bash_profile]; then
+        mv .bash_profile .bash_profile.backup
+    fi
 
     ln -s ~/repositories/home/.vim
     ln -s ~/repositories/home/.vimrc
