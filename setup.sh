@@ -7,6 +7,7 @@ workingDirectory=`pwd`
 
 repositories=( \
     https://github.com/cdata/home.git \
+    https://github.com/revans/bash-it.git \
 )
 
 function initializePlatform {
@@ -58,6 +59,7 @@ function initializeDotFiles {
     ln -s ~/repositories/home/.screenrc
     ln -s ~/repositories/home/.bash_profile
     ln -s ~/repositories/home/.support
+    ln -s ~/repositories/bash-it .bash_it
 
     if [[ ! -e .ssh ]]; then
         mkdir .ssh
