@@ -5,16 +5,8 @@ platform=`uname`
 
 workingDirectory=`pwd`
 
-nodeRepos=( \
-    https://github.com/ry/node.git \
-    https://github.com/isaacs/npm.git \
-)
-
-vimRepos=( \
-    https://github.com/scrooloose/nerdtree.git \
-    https://github.com/scrooloose/nerdcommenter.git \
-    https://github.com/tpope/vim-fugitive.git \
-    https://github.com/mattn/zencoding-vim.git \
+repositories=( \
+    https://github.com/cdata/home \
 )
 
 function initializePlatform {
@@ -22,8 +14,8 @@ function initializePlatform {
     if [[ "$platform" == 'Darwin' ]]; then
         
         # Handle an OSX system - assumes XCode is installed (LAME!)...
-        sudo ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"
-        
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+
         brew install git
         brew install macvim
         
@@ -38,94 +30,36 @@ function initializePlatform {
     fi
 }
 
-function initializeHome {
+function initializeRepositories {
+
+    mkdir ~/repositories
+    cd ~/repositories
+
+    for repository in "${reposiories[@]}"; do
+
+        git clone $repository
+
+    done
+}
+
+function initializeDotFiles {
     
     cd ~/
 
-    git init
-    git remote add origin git://github.com/cdata/home.git
-    git pull origin master
-    
-    mkdir ~/Repositories
-    mkdir ~/.local
+    mv .bashrc .bashrc.backup
+    mv .bash_profile .bash_profile.backup
 
-    cd $workingDirectory
-}
+    ln -s ~/repositories/home/.vim
+    ln -s ~/repositories/home/.vimrc
+    ln -s ~/repositories/home/.gvimrc
+    ln -s ~/repositories/home/.screenrc
+    ln -s ~/repositories/home/.bash_profile
+    ln -s ~/repositories/home/.support
 
+    mkdir .ssh
+    cd .ssh
 
-function nodeSetup {
-    
-    if [[ "$platform" == 'Darwin' ]]; then
-        brew install openssl
-    else
-        sudo apt-get -yq install libssl-dev
-    fi
-
-    cd ~/Repositories/node
-    
-    ./configure --prefix=~/.local
-    make && make install
-    
-    cd ~/Repositories/npm
-    
-    node cli.js config set unsafe-perm true 
-    make install
-    
-    cd $workingDirectory
-}
-
-function vimSetup {
-    
-    cd ~/.vim
-    
-    mkdir -p .vim/{doc,plugin,syntax}
-    
-    ln -s ../Repositories/nerdtree/nerdtree_plugin
-    ln -s ../Repositories/zencoding-vim/autoload
-
-    cd plugin
-    ln -s ../../Repositories/nerdtree/plugin/NERD_tree.vim
-    ln -s ../../Repositories/nerdcommenter/plugin/NERD_commenter.vim
-    ln -s ../../Repositories/vim-fugitive/plugin/fugitive.vim
-    ln -s ../../Repositories/zencoding-vim/plugin/zencoding.vim
-
-    cd ../doc
-    ln -s ../../Repositories/nerdtree/doc/NERD_tree.txt
-    ln -s ../../Repositories/nerdcommenter/doc/NERD_commenter.txt
-    ln -s ../../Repositories/vim-fugitive/doc/fugitive.txt
-    ln -s ../../Repositories/zencoding-vim/doc/zencoding.txt
-
-    cd $workingDirectory
-}
-
-function cloneRepos {
-    
-    for arg in "${args[@]}"; do
-        case "$arg" in
-            vim)
-
-                for repo in "${vimRepos[@]}"; do
-                    
-                    cd ~/Repositories
-                    git clone $repo
-                done
-
-                vimSetup
-                ;;
-            node)
-
-                for repo in "${nodeRepos[@]}"; do
-                    
-                    cd ~/Repositories
-                    git clone $repo
-                done
- 
-                nodeSetup
-                ;;
-        esac
-    done
-
-    cd $workingDirectory
+    ln -s ~/repositories/home/publickeys authorized_keys
 }
 
 function selfDestruct {
@@ -134,6 +68,7 @@ function selfDestruct {
 }
 
 initializePlatform
-initializeHome
-cloneRepos
+initializeRepositories
+initializeDotFiles
 selfDestruct
+
