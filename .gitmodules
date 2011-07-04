@@ -15,7 +15,7 @@
 	url = https://github.com/mattn/zencoding-vim.git
 [submodule ".support/vim-javascript"]
 	path = .support/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
 [submodule ".support/scss-vim"]
 	path = .support/scss-vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
