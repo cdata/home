@@ -35,7 +35,7 @@ function initializeRepositories {
     mkdir ~/repositories
     cd ~/repositories
 
-    for repository in "${reposiories[@]}"; do
+    for repository in "${repositories[@]}"; do
         git clone $repository
     done
 }
