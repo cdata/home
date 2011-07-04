@@ -6,7 +6,7 @@ platform=`uname`
 workingDirectory=`pwd`
 
 repositories=( \
-    https://github.com/cdata/home \
+    https://github.com/cdata/home.git \
 )
 
 function initializePlatform {
@@ -36,9 +36,7 @@ function initializeRepositories {
     cd ~/repositories
 
     for repository in "${reposiories[@]}"; do
-
         git clone $repository
-
     done
 }
 
@@ -61,7 +59,10 @@ function initializeDotFiles {
     ln -s ~/repositories/home/.bash_profile
     ln -s ~/repositories/home/.support
 
-    mkdir .ssh
+    if [ ! -e .ssh ]; then
+        mkdir .ssh
+    fi
+
     cd .ssh
 
     ln -s ~/repositories/home/publickeys authorized_keys
