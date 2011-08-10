@@ -1,24 +1,24 @@
-[submodule ".support/bash-it"]
-	path = .support/bash-it
+[submodule "support/bash-it"]
+	path = support/bash-it
 	url = https://github.com/revans/bash-it.git
-[submodule ".support/nerdtree"]
-	path = .support/nerdtree
+[submodule "support/nerdtree"]
+	path = support/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".support/nerdcommenter"]
-	path = .support/nerdcommenter
+[submodule "support/nerdcommenter"]
+	path = support/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule ".support/vim-fugitive"]
-	path = .support/vim-fugitive
+[submodule "support/vim-fugitive"]
+	path = support/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".support/zencoding-vim"]
-	path = .support/zencoding-vim
+[submodule "support/zencoding-vim"]
+	path = support/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
-[submodule ".support/vim-javascript"]
-	path = .support/vim-javascript
+[submodule "support/vim-javascript"]
+	path = support/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule ".support/scss-vim"]
-	path = .support/scss-vim
+[submodule "support/scss-vim"]
+	path = support/scss-vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
-[submodule ".support/vim-stylus"]
-	path = .support/vim-stylus
+[submodule "support/vim-stylus"]
+	path = support/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
