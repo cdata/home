@@ -1,1 +1,1 @@
-../../.support/vim-javascript/syntax/javascript.vim
+../../support/vim-javascript/syntax/javascript.vim
