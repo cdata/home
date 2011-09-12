@@ -56,14 +56,14 @@ function initializeDotFiles {
         mv .bash_profile .bash_profile.backup
     fi
 
-    ln -s ~/repositories/home/.vim
-    ln -s ~/repositories/home/.vimrc
-    ln -s ~/repositories/home/.gvimrc
-    ln -s ~/repositories/home/.screenrc
-    ln -s ~/repositories/home/.bash_profile
-    ln -s ~/repositories/home/.bashrc
-    ln -s ~/repositories/home/.support
-    ln -s ~/repositories/home/.support/bash-it ~/.bash_it
+    ln -s ~/repositories/home/vim ~/.vim
+    ln -s ~/repositories/home/vimrc ~/.vimrc
+    ln -s ~/repositories/home/gvimrc ~/.gvimrc
+    ln -s ~/repositories/home/screenrc ~/.screenrc
+    ln -s ~/repositories/home/bash_profile ~/.bash_profile
+    ln -s ~/repositories/home/bashrc ~/.bashrc
+    ln -s ~/repositories/home/support ~/.support
+    ln -s ~/repositories/home/support/bash-it ~/.bash_it
 
     if [[ ! -e .ssh ]]; then
         mkdir .ssh
