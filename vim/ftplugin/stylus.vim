@@ -1,1 +1,1 @@
-../../.support/vim-stylus/ftplugin/stylus.vim
+../../support/vim-stylus/ftplugin/stylus.vim
