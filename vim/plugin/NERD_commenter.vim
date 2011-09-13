@@ -1,1 +1,1 @@
-../../.support/nerdcommenter/plugin/NERD_commenter.vim
+../../support/nerdcommenter/plugin/NERD_commenter.vim
