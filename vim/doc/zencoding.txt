@@ -1,1 +1,1 @@
-../../.support/zencoding-vim/doc/zencoding.txt
+../../support/zencoding-vim/doc/zencoding.txt
