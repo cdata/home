@@ -1,1 +1,1 @@
-../../.support/vim-stylus/indent/stylus.vim
+../../support/vim-stylus/indent/stylus.vim
