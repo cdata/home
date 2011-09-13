@@ -1,1 +1,1 @@
-../../.support/vim-javascript/indent/javascript.vim
+../../support/vim-javascript/indent/javascript.vim
