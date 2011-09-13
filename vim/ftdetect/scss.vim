@@ -1,1 +1,1 @@
-../../.support/scss-vim/ftdetect/scss.vim
+../../support/scss-vim/ftdetect/scss.vim
