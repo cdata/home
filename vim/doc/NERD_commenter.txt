@@ -1,1 +1,1 @@
-../../.support/nerdcommenter/doc/NERD_commenter.txt
+../../support/nerdcommenter/doc/NERD_commenter.txt
