@@ -1,1 +1,1 @@
-../../.support/nerdtree/doc/NERD_tree.txt
+../../support/nerdtree/doc/NERD_tree.txt
