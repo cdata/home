@@ -1,1 +1,1 @@
-../../.support/vim-fugitive/doc/fugitive.txt
+../../support/vim-fugitive/doc/fugitive.txt
