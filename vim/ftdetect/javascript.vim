@@ -1,1 +1,1 @@
-../../.support/vim-javascript/ftdetect/javascript.vim
+../../support/vim-javascript/ftdetect/javascript.vim
