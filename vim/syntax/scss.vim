@@ -1,1 +1,1 @@
-../../.support/scss-vim/syntax/scss.vim
+../../support/scss-vim/syntax/scss.vim
