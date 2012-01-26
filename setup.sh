@@ -73,7 +73,7 @@ function initializeDotFiles {
     cd ~/repositories/home/support/
     mkdir -p bash-it/themes/cdata/
     cd bash-it/themes/cdata/
-    ln -s ../../cdata.theme.bash
+    ln -s ../../../cdata.theme.bash
 
     cd ~/.ssh
 
