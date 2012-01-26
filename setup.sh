@@ -25,7 +25,7 @@ function initializePlatform {
         sudo apt-get -yq update
         sudo apt-get -yq upgrade
         
-        sudo apt-get -yq install aptitude git build-essential openssh-server vim rubygems1.8 screen
+        sudo apt-get -yq install aptitude git build-essential openssh-server vim tmux
         
     fi
 }
@@ -64,6 +64,7 @@ function initializeDotFiles {
     ln -s ~/repositories/home/bashrc ~/.bashrc
     ln -s ~/repositories/home/support ~/.support
     ln -s ~/repositories/home/support/bash-it ~/.bash_it
+    ln -s ~/repositories/home/tmux.conf ~/.tmux.conf
 
     if [[ ! -e .ssh ]]; then
         mkdir .ssh
