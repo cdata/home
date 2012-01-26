@@ -51,7 +51,7 @@ export BASH=$HOME/.bash_it
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_THEME='sirup'
+export BASH_THEME='cdata'
 
 
 # Set my editor and git editor
