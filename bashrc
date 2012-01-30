@@ -53,6 +53,7 @@ export BASH=$HOME/.bash_it
 # location /.bash_it/themes/
 export BASH_THEME='cdata'
 
+export completion=(git)
 
 # Set my editor and git editor
 export EDITOR="vim"
@@ -72,4 +73,4 @@ export IRC_CLIENT='irssi'
 
 # Load Bash It
 source $BASH/bash_it.sh
-
+source $BASH_IT/completion/available/git.completion.bash
