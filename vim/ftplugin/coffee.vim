@@ -1,0 +1,1 @@
+../../support/vim-coffee-script/ftplugin/coffee.vim

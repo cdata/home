@@ -3,7 +3,7 @@ GIT_PS1_SHOWDIRTYSTATE="enabled"
  
 function prompt_command() {
     # Check http://github.com/Sirupsen/dotfiles for screenshot
-    PS1="$bold_black\h $blue\W/$bold_green$(__git_ps1 " (%s)") ${bold_black}シ${normal} "
+    PS1="$bold_black\h $blue\W/$green$(__git_ps1 " (%s)") ${bold_black}シ${normal} "
 }
 
 PROMPT_COMMAND=prompt_command;

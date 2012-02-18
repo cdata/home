@@ -22,3 +22,6 @@
 [submodule "support/vim-stylus"]
 	path = support/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule "support/vim-coffee-script"]
+	path = support/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git

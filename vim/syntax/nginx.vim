@@ -1,0 +1,1 @@
+../../support/nginx-vim/nginx.vim
