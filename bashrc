@@ -38,9 +38,9 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set some useful aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -alFG'
+alias la='ls -AG'
+alias l='ls -CFG'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -74,3 +74,6 @@ export IRC_CLIENT='irssi'
 # Load Bash It
 source $BASH/bash_it.sh
 source $BASH_IT/completion/available/git.completion.bash
+
+# Extras..
+source $HOME/.bash_twist

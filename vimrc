@@ -74,8 +74,8 @@ set sc
 
 " Set tabs to four spaces + smart indentation
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Add row / columnn information
@@ -89,4 +89,12 @@ set lbr
 
 " Change colorscheme from default to delek
 set background=dark
-colorscheme railscasts
+colorscheme zenburn
+
+" Whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
